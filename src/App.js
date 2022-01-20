@@ -1,7 +1,14 @@
 import './App.css';
 
-function App() {
-  return <div className="App">TEST</div>;
-}
+import AppBar from './components/AppBar';
+import Container from './components/Container';
+import Searchbar from './components/Searchbar';
 
-export default App;
+export default function App() {
+  return (
+    <Container>
+      <AppBar />
+      <Searchbar />
+    </Container>
+  );
+}
