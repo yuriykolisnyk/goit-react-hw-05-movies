@@ -2,7 +2,9 @@
   display: flex;
   align-items: center;
   min-height: 80px;
+  border-radius: 5px;
   border-bottom: 1px solid #2a363b;
+  box-shadow: 5px 5px 15px 5px #010e53;
 }
 
 .link {
