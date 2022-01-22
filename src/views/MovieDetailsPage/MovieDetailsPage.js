@@ -1,5 +1,5 @@
 import { useState, useEffect, Suspense } from 'react';
-import { useParams, NavLink, Route, useRouteMatch, Switch } from 'react-router-dom';
+import { useParams, NavLink, Route, useRouteMatch, Switch, useLocation } from 'react-router-dom';
 import { fetchMovieDetails, POSTER_URL } from '../../API/MoviesAPI';
 import Cast from '../Cast';
 import Reviews from '../Reviews';
@@ -11,6 +11,8 @@ export default function MovieDetailsPage() {
   const { movieId } = useParams();
   const { url, path } = useRouteMatch();
   const [film, setFilm] = useState({});
+  const location = useLocation();
+  const [prevLocation] = useState(location?.state?.from ?? '/');
 
   useEffect(() => {
     fetchMovieDetails(movieId).then(setFilm);
@@ -18,6 +20,9 @@ export default function MovieDetailsPage() {
 
   return (
     <div>
+      <NavLink to={prevLocation} className={s.linkBack}>
+        Go back
+      </NavLink>
       <div className={s.wrapper}>
         <img
           className={s.image}

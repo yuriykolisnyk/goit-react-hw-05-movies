@@ -42,8 +42,13 @@
 }
 
 .activeLink {
-  composes: link;
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 500;
   color: #2196f3;
+  font-size: 22px;
+  font-weight: 700;
 }
 
 .list {
@@ -52,4 +57,14 @@
 
 .item {
   padding-left: 0;
+}
+
+.linkBack {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 500;
+  color: #2a363b;
+  font-size: 22px;
+  font-weight: 700;
 }
